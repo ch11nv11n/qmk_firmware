@@ -23,11 +23,13 @@
 ///https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/
 
 
-#define MASTER_LEFT
-// #define MASTER_RIGHT
+// #define MASTER_LEFT
+#define MASTER_RIGHT
 // #define EE_HANDS
 
 #define CUSTOM_FONT
+
+#define SPLIT_WPM_ENABLE
 
 #define CUSTOM_LAYER_READ //if you remove this it causes issues - needs better guarding
 
@@ -57,18 +59,6 @@
 #ifdef RGBLIGHT_ENABLE
     #undef RGBLED_NUM
 
-    //#define RGBLIGHT_ANIMATIONS
-	//#define RGBLIGHT_EFFECT_BREATHING
-	#define RGBLIGHT_EFFECT_RAINBOW_MOOD
-	//#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-	//#define RGBLIGHT_EFFECT_SNAKE
-	//#define RGBLIGHT_EFFECT_KNIGHT
-	//#define RGBLIGHT_EFFECT_CHRISTMAS
-	//#define RGBLIGHT_EFFECT_STATIC_GRADIENT
-	//#define RGBLIGHT_EFFECT_RGB_TEST
-	//#define RGBLIGHT_EFFECT_ALTERNATING
-	//#define RGBLIGHT_EFFECT_TWINKLE
-
     #define RGBLED_NUM 70
 	//#define RGBLED_SPLIT
 	#define RGBLED_SPLIT { 35, 35 } // haven't figured out how to use this yet
@@ -97,34 +87,11 @@
 #    define RGB_MATRIX_VAL_STEP 8
 #    define RGB_MATRIX_SPD_STEP 10
 
-/* Disable the animations you don't want/need.  You will need to disable a good number of these    *
- * because they take up a lot of space.  Disable until you can successfully compile your firmware. */
- // #   undef ENABLE_RGB_MATRIX_ALPHAS_MODS
- // #   undef ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN
- // #   undef ENABLE_RGB_MATRIX_BREATHING
- // #   undef ENABLE_RGB_MATRIX_CYCLE_ALL
- // #   undef ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT
- // #   undef ENABLE_RGB_MATRIX_CYCLE_UP_DOWN
- // #   undef ENABLE_RGB_MATRIX_CYCLE_OUT_IN
- // #   undef ENABLE_RGB_MATRIX_CYCLE_OUT_IN_DUAL
- // #   undef ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON
- // #   undef ENABLE_RGB_MATRIX_DUAL_BEACON
- // #   undef ENABLE_RGB_MATRIX_RAINBOW_BEACON
- // #   undef ENABLE_RGB_MATRIX_RAINBOW_PINWHEELS
- // #   undef ENABLE_RGB_MATRIX_RAINDROPS
- // #   undef ENABLE_RGB_MATRIX_JELLYBEAN_RAINDROPS
- // #   undef ENABLE_RGB_MATRIX_TYPING_HEATMAP
- // #   undef ENABLE_RGB_MATRIX_DIGITAL_RAIN
- // #   undef ENABLE_RGB_MATRIX_SOLID_REACTIVE
- // #   undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
- // #   undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_WIDE
- // #   undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTIWIDE
- // #   undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_CROSS
- // #   undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTICROSS
- // #   undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_NEXUS
- // #   undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS
- // #   undef ENABLE_RGB_MATRIX_SPLASH
- // #   undef ENABLE_RGB_MATRIX_MULTISPLASH
- // #   undef ENABLE_RGB_MATRIX_SOLID_SPLASH
- // #   undef ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
 #endif
+
+//mouse scroll speed
+#define MK_W_OFFSET_UNMOD = 10
+
+// OLED pet functionality
+#define OLED_TIMEOUT 12000
+#define OLED_BRIGHTNESS 120
